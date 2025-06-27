@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  BackgroundView.swift
 //  SpotifyUI
 //
-//  Created by Nosher Khalid on 6/25/25.
+//  Created by Nosher Khalid on 6/27/25.
 //
 
 import SwiftUI
 
-struct SplashView: View {
+struct BackgroundView: View {
     var body: some View {
         ZStack {
             LinearGradient(stops: [
@@ -15,12 +15,10 @@ struct SplashView: View {
                 .init(color: .black, location: 0.50)
             ], startPoint: .topLeading, endPoint: .bottomTrailing)
             .ignoresSafeArea()
-            SpotifyLogo()
-                .frame(width: 200, height: 200)
         }
     }
 }
 
 #Preview {
-    SplashView()
+    BackgroundView()
 }
