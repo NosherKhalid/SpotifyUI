@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignUpView: View {
     
+    @EnvironmentObject var coordinator: Coordinator
+    
     var body: some View {
         
         ZStack {
@@ -25,7 +27,9 @@ struct SignUpView: View {
                 }
                 .foregroundStyle(.white)
                 
-                Button("Sign up Free"){}
+                Button("Sign up Free"){
+                    coordinator.loginSuccess()
+                }
                     .frame(maxWidth: .infinity, minHeight: 44)
                     .foregroundStyle(.black)
                     .font(.custom("Lufga-Regular", size: 14))

@@ -10,6 +10,11 @@ import Combine
 
 class Coordinator: ObservableObject {
     @Published var path: NavigationPath = NavigationPath()
+    @Published var isAuthenticated: Bool = AppStorageManager.shared.isAuthenticated
+    
+    init() {
+        isAuthenticated = AppStorageManager.shared.isAuthenticated
+    }
     
     func push(_ page: AppPages) {
         path.append(page)
@@ -21,6 +26,12 @@ class Coordinator: ObservableObject {
     
     func popToRoot() {
         path.removeLast(path.count)
+    }
+    
+    func loginSuccess() {
+        isAuthenticated = true
+        AppStorageManager.shared.isAuthenticated = true
+        path = NavigationPath()
     }
     
     @ViewBuilder
