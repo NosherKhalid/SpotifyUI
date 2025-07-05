@@ -8,75 +8,80 @@
 import SwiftUI
 
 struct SignUpView: View {
+    
     var body: some View {
-        BackgroundView()
-        VStack(spacing: 24) {
-            SpotifyLogo()
-                .frame(width: 100, height: 50)
-            VStack(spacing: 0) {
-                Text("Millions of Songs")
-                    .font(.custom("Lufga-Medium", size: 40))
-                Text("Free on Spotify.")
-                    .font(.custom("Lufga-Medium", size: 38))
-            }
-            Button("Sign up Free"){}
-                .frame(maxWidth: .infinity, minHeight: 44)
-                .foregroundStyle(.black)
-                .font(.custom("Lufga-Regular", size: 14))
-                .background(.spotifyGreen)
-                .clipShape(Capsule())
-                .padding(.horizontal)
-            Text("Or")
-                .font(.custom("Lufga-Medium", size: 14))
-                .foregroundStyle(.spotifyGrey)
-            VStack {
-                // Google
-                Button(action: {
-                    // Your sign-in logic here
-                }) {
-                    HStack {
-                        Image("google")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                        Text("Sign in with Google")
-                            .foregroundStyle(.white)
-                            .font(.custom("Lufga-Regular", size: 14))
-                    }
+        
+        ZStack {
+            BackgroundView()
+            VStack(spacing: 24) {
+                Spacer()
+                SpotifyLogo()
+                    .frame(width: 100, height: 50)
+                VStack(spacing: 0) {
+                    Text("Millions of Songs")
+                        .font(.custom("Lufga-Medium", size: 40))
+                    Text("Free on Spotify.")
+                        .font(.custom("Lufga-Medium", size: 38))
                 }
-                    .frame(maxWidth: .infinity, minHeight: 44)
-                    .background(Color(UIColor.systemGray4))
-                    .clipShape(Capsule())
-                    .padding(.horizontal)
+                .foregroundStyle(.white)
                 
-                //Apple
-                Button(action: {
-                    // Your sign-in logic here
-                }) {
-                    HStack {
-                        Image(systemName: "apple.logo")
-                            .resizable()
-                            .tint(.white)
-                            .frame(width: 24, height: 24)
-                        Text("Sign in with Apple")
-                            .foregroundStyle(.white)
-                            .font(.custom("Lufga-Regular", size: 14))
-                    }
-                }
+                Button("Sign up Free"){}
                     .frame(maxWidth: .infinity, minHeight: 44)
-                    .background(Color(UIColor.systemGray4))
-                    .clipShape(Capsule())
-                    .padding(.horizontal)
-            }
-            
-            HStack {
-                Text("Have an account?")
+                    .foregroundStyle(.black)
                     .font(.custom("Lufga-Regular", size: 14))
-                Text("Log in")
-                    .font(.custom("Lufga-Bold", size: 14))
+                    .background(.spotifyGreen)
+                    .clipShape(Capsule())
+                    .padding(.horizontal)
+                Text("Or")
+                    .font(.custom("Lufga-Medium", size: 14))
+                    .foregroundStyle(.spotifyGrey)
+                VStack {
+                    // Google
+                    Button(action: {
+                        // Your sign-in logic here
+                    }) {
+                        HStack {
+                            Image("google")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                            Text("Sign in with Google")
+                                .foregroundStyle(.white)
+                                .font(.custom("Lufga-Regular", size: 14))
+                        }
+                    }
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .background(Color(UIColor.darkGray))
+                        .clipShape(Capsule())
+                        .padding(.horizontal)
+                    
+                    //Apple
+                    Button(action: {
+                        // Your sign-in logic here
+                    }) {
+                        HStack {
+                            Image(systemName: "apple.logo")
+                                .resizable()
+                                .tint(.white)
+                                .frame(width: 24, height: 24)
+                            Text("Sign in with Apple")
+                                .foregroundStyle(.white)
+                                .font(.custom("Lufga-Regular", size: 14))
+                        }
+                    }
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .background(Color(UIColor.darkGray))
+                        .clipShape(Capsule())
+                        .padding(.horizontal)
+                }
                 
+                HStack {
+                    Text("Have an account?")
+                        .font(.custom("Lufga-Regular", size: 14))
+                    Text("Log in")
+                        .font(.custom("Lufga-Bold", size: 14))
+                }
+                .foregroundStyle(.white)
             }
-                
-            
         }
     }
 }
